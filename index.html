@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelBloom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="hfav.css">
+</head>
+
+<body>
+    <ul class="topnav" id="topNav">
+        <li class="site-name"><a href="index.html">Hotel<span class="color">Bloom</span></a></li>
+        <div class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="favourite.html">Favorite</a></li>
+            <li><a href="bot.html">Help</a></li>
+            <li><a href="login.html">Sign In/Sign Up</a></li>
+        </div>
+    </ul>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="favourite.html" id="viewFavoritesLink">Favorite</a>
+        <a href="bot.html">Help</a>
+        <a href="login.html">Sign In/Sign Up</a>
+    </div>
+
+    <div class="drawer-toggle">
+        <span class="drawer-icon" onclick="openNav()">&#9776;</span>
+        <span class="site-name"><a href="index.html">Hotel<span class="color">Bloom</span></a></span>
+    </div>
+
+    <div class="search-box">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for a hotel..."
+            oninput="filterHotels()">
+        <button class="search-btn" onclick="filterHotels()">Search</button>
+    </div>
+
+    <section class="features">
+        <h2>Top Deals</h2>
+        <div class="scroll-container" id="scrollable-section-1">
+            <button class="scroll-btn left" onclick="scrollLeft()" data-target="scrollable-section-1">&#8249;</button>
+            <div class="hotel-list">
+                <a href="hotelpage1.html" class="card-link">
+                    <div class="hotel-card" data-name="Davinci Beach Resort">
+                        <img src="images/mp-fV2dM2WvKvE-unsplash.jpg" alt="Hotel 1">
+                        <div class="hotel-info">
+                            <h3>Davinci Beach Resort</h3>
+                            <p>Location: </p>
+                            <p>Rating: 7.4</p>
+                            <p><span class="price">EGP 5,797</span> <span class="original-price">EGP 12,083</span></p>
+                            <button class="like-btn" id="like1" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage2.html">
+                    <div class="hotel-card" data-name="Tuya Pyramids Inn" id="hotel2">
+                        <img src="images/valeriia-bugaiova-_pPHgeHz1uk-unsplash.jpg" alt="Hotel 2">
+                        <div class="hotel-info">
+                            <h3>Tuya Pyramids Inn</h3>
+                            <p>Location: Cairo</p>
+                            <p>Rating: 8.1</p>
+                            <p><span class="price">EGP 3,273</span> <span class="original-price">EGP 5,095</span></p>
+                            <button class="like-btn" id="like2" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage3.html">
+                    <div class="hotel-card" data-name="Hotel Armani">
+                        <img src="images/rktkn-ssOtyGE8CyE-unsplash.jpg" alt="Hotel 3">
+                        <div class="hotel-info">
+                            <h3>Hotel Armani</h3>
+                            <p>Location: Gouna</p>
+                            <p>Rating: 8.7</p>
+                            <p><span class="price">EGP 5,250</span> <span class="original-price">EGP 11,562</span></p>
+                            <button class="like-btn" id="like3" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage4.html">
+                    <div class="hotel-card" data-name="Zak Inn">
+                        <img src="images/sara-dubler-Koei_7yYtIo-unsplash.jpg" alt="Hotel 4">
+                        <div class="hotel-info">
+                            <h3>Zak Inn</h3>
+                            <p>Location: Sharm El-Sheikh</p>
+                            <p>Rating: 9.7</p>
+                            <p><span class="price">EGP 3,301</span> <span class="original-price">EGP 3,344</span></p>
+                            <button class="like-btn" id="like4" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage5.html">
+                    <div class="hotel-card" data-name="Luna Hotel">
+                        <img src="images/alexander-videnov-2-cvrZDeKnw-unsplash.jpg" alt="Hotel 5">
+                        <div class="hotel-info">
+                            <h3>Luna Hotel</h3>
+                            <p>Location: Marsa Allam </p>
+                            <p>Rating: 7.2</p>
+                            <p><span class="price">EGP 4,900</span> <span class="original-price">EGP 5,774</span></p>
+                            <button class="like-btn" id="like5" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage6.html">
+                    <div class="hotel-card" data-name="Sand Beach Hotel">
+                        <img src="images/artiom-vallat-H59WxBNSQY8-unsplash.jpg" alt="Hotel 6">
+                        <div class="hotel-info">
+                            <h3>Sand Beach Hotel</h3>
+                            <p>Location: Hurghada </p>
+                            <p>Rating: 9.1</p>
+                            <p><span class="price">EGP 9,340</span> <span class="original-price">EGP 10,000</span></p>
+                            <button class="like-btn" id="like6" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage7.html">
+                    <div class="hotel-card" data-name="Blue Beach">
+                        <img src="images/gabriel-ghnassia-A9h6OsAxTyQ-unsplash.jpg" alt="Hotel 7">
+                        <div class="hotel-info">
+                            <h3>Blue Beach</h3>
+                            <p>Location: Dahab </p>
+                            <p>Rating: 8.6</p>
+                            <p><span class="price">EGP 7,100</span> <span class="original-price">EGP 8,904</span></p>
+                            <button class="like-btn" id="like7" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage8.html">
+                    <div class="hotel-card" data-name="Nubian Village">
+                        <img src="images/orva-studio-YC8qqp50BdA-unsplash.jpg" alt="Hotel 8">
+                        <div class="hotel-info">
+                            <h3>Nubian Village</h3>
+                            <p>Location: Abu Simbel </p>
+                            <p>Rating: 7.3</p>
+                            <p><span class="price">EGP 2,800</span> <span class="original-price">EGP 4,894</span></p>
+                            <button class="like-btn" id="like8" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage9.html">
+                    <div class="hotel-card" data-name="Swiss Inn">
+                        <img src="images/saad-khan-425b2PhNuHA-unsplash.jpg" alt="Hotel 9">
+                        <div class="hotel-info">
+                            <h3>Swiss Inn</h3>
+                            <p>Location: Al Arish </p>
+                            <p>Rating: 6.9</p>
+                            <p><span class="price">EGP 1,800</span> <span class="original-price">EGP 3,147</span></p>
+                            <button class="like-btn" id="like9" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage10.html">
+                    <div class="hotel-card" data-name="Dreams Resort">
+                        <img src="images/claire-ward-Fy9JXanwJi0-unsplash.jpg" alt="Hotel 10">
+                        <div class="hotel-info">
+                            <h3>Dreams Resort</h3>
+                            <p>Location: Sharm El-Sheikh </p>
+                            <p>Rating: 8.7</p>
+                            <p><span class="price">EGP 4,790</span> <span class="original-price">EGP 5,004</span></p>
+                            <button class="like-btn" id="like10" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <button class="scroll-btn right" onclick="scrollRight()" data-target="scrollable-section-1">&#8250;</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Top Hotels</h2>
+        <div class="scroll-container" id="scrollable-section-2">
+            <button class="scroll-btn left" onclick="scrollLeft()" data-target="scrollable-section-2">&#8249;</button>
+            <div class="hotel-list">
+                <a href="hotelpage11.html">
+                    <div class="hotel-card" data-name="Delta Hotel">
+                        <img src="images/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg" alt="Hotel 1">
+                        <div class="hotel-info">
+                            <h3>Delta Hotel</h3>
+                            <p>Location: Alexandria</p>
+                            <p>Rating: 7.7</p>
+                            <p><span class="price">EGP 10,230</span> <span class="original-price">EGP 12,540</span></p>
+                            <button class="like-btn" id="like11" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a href="hotelpage12.html">
+                    <div class="hotel-card" data-name="Dahab Paradise">
+                        <img src="images/sasha-kaunas-67-sOi7mVIk-unsplash.jpg" alt="Hotel 2">
+                        <div class="hotel-info">
+                            <h3>Dahab Paradise</h3>
+                            <p>Location: Dahab</p>
+                            <p>Rating: 9.6</p>
+                            <p><span class="price">EGP 2,900</span> <span class="original-price">EGP 3,344</span></p>
+                            <button class="like-btn" id="like12" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+    
+                    </div>
+                </a>
+                <a href="hotelpage13.html">
+                    <div class="hotel-card" data-name="Sara Hotel">
+                        <img src="images/paolo-nicolello-2gOxKj594nM-unsplash.jpg" alt="Hotel 3">
+                        <div class="hotel-info">
+                            <h3>Sara Hotel</h3>
+                            <p>Location: Aswan</p>
+                            <p>Rating: 8.7</p>
+                            <p><span class="price">EGP 8,250</span> <span class="original-price">EGP 9,562</span></p>
+                            <button class="like-btn" id="like13" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+    
+                    </div>
+                </a>
+                <a href="hotelpage14.html">
+                    <div class="hotel-card" data-name="El Gezira">
+                        <img src="images/jorg-angeli-1tyuLfDOnG0-unsplash.jpg" alt="Hotel 4">
+                        <div class="hotel-info">
+                            <h3>El Gezira</h3>
+                            <p>Location: Luxor </p>
+                            <p>Rating: 9.7</p>
+                            <p><span class="price">EGP 3,900</span> <span class="original-price">EGP 4,344</span></p>
+                            <button class="like-btn" id="like14" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+    
+                    </div>
+                </a>
+                <a href="hotelpage15.html">
+                    <div class="hotel-card" data-name="Regina Hotel">
+                        <img src="images/roberto-nickson-EeeKjwm2vDo-unsplash.jpg" alt="Hotel 5">
+                        <div class="hotel-info">
+                            <h3>Regina Hotel</h3>
+                            <p>Location: Hurghada </p>
+                            <p>Rating: 9.5</p>
+                            <p><span class="price">EGP 6,100</span> <span class="original-price">EGP 9,904</span></p>
+                            <button class="like-btn" id="like15" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+    
+                    </div>
+                </a>
+                <a href="hotelpage16.html">
+                    <div class="hotel-card" data-name="Jolie Resort">
+                        <img src="images/sasha-kaunas-xEaAoizNFV8-unsplash.jpg" alt="Hotel 6">
+                        <div class="hotel-info">
+                            <h3>Jolie Resort</h3>
+                            <p>Location: Luxor </p>
+                            <p>Rating: 8.0</p>
+                            <p><span class="price">EGP 2,780</span> <span class="original-price">EGP 4,690</span></p>
+                            <button class="like-btn" id="like16" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+    
+                    </div>
+                </a>
+                <a href="hotelpage17.html">
+                    <div class="hotel-card" data-name="EL Nakhil Hotel">
+                        <img src="images/will-truettner-7ZZ_FmVelQY-unsplash.jpg" alt="Hotel 7">
+                        <div class="hotel-info">
+                            <h3>EL Nakhil Hotel</h3>
+                            <p>Location: Hurghada </p>
+                            <p>Rating: 7.9</p>
+                            <p><span class="price">EGP 5,620</span> <span class="original-price">EGP 7,230</span></p>
+                            <button class="like-btn" id="like17" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+    
+                    </div>
+                </a>
+                <a href="hotelpage18.html">
+                    <div class="hotel-card" data-name="Coral Hills">
+                        <img src="images/marek-levak-RErhr8r1q6s-unsplash.jpg" alt="Hotel 8">
+                        <div class="hotel-info">
+                            <h3>Coral Hills</h3>
+                            <p>Location: Sharm El-Shiekh </p>
+                            <p>Rating: 8.4</p>
+                            <p><span class="price">EGP 7,400</span> <span class="original-price">EGP 8,560</span></p>
+                            <button class="like-btn" id="like18" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+    
+                    </div>
+                </a>
+                <a href="hotelpage19.html">
+                    <div class="hotel-card" data-name="Eden Rock Resort">
+                        <img src="images/kelsey-curtis--27u_GzlAFw-unsplash.jpg" alt="Hotel 9">
+                        <div class="hotel-info">
+                            <h3>Eden Rock Resort</h3>
+                            <p>Location: Dahab </p>
+                            <p>Rating: 8.6</p>
+                            <p><span class="price">EGP 7,090</span> <span class="original-price">EGP 9,344</span></p>
+                            <button class="like-btn" id="like19" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+    
+                    </div>
+                </a>
+                <a href="hotelpage20.html">
+                    <div class="hotel-card" data-name="Khaled Hotel">
+                        <img src="images/johannes-w-IQKuHc2lils-unsplash.jpg" alt="Hotel 10">
+                        <div class="hotel-info">
+                            <h3>Khaled Hotel</h3>
+                            <p>Location: Alexandria </p>
+                            <p>Rating: 7.7</p>
+                            <p><span class="price">EGP 10,000</span> <span class="original-price">EGP 11,200</span></p>
+                            <button class="like-btn" id="like20" onclick="disableLink(event)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <button class="scroll-btn right" onclick="scrollRight()" data-target="scrollable-section-2">›</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="bot.html">FAQ</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><span>Phone:</span> <a href="tel:+1234567890">+1 234 567 890</a></li>
+                    <li><span>Email:</span> <a href="mailto:contact@hotelbloom.com">contact@hotelbloom.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><img src="images\facebook_2111393.png" alt="Facebook"></a>
+                    <a href="#"><img src="images\instagram-logo_87390.png" alt="Instagram"></a>
+                    <a href="#"><img src="images\twitter_2111688.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HotelBloom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+    <script src="hfav.js"></script>
+    <script src="fhome.js"></script>
+</body>
+
+</html>

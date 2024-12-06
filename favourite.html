@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <ul class="topnav" id="topNav">
+        <li class="site-name"><a href="index.html">Hotel<span class="color">Bloom</span></a></li>
+        <div class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="favourite.html">Favorite</a></li>
+            <li><a href="bot.html">Help</a></li>
+            <li><a href="login.html">Sign In/Sign Up</a></li>
+        </div>
+    </ul>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="favorite.html" id="viewFavoritesLink">Favorite</a>
+        <a href="bot.html">Help</a>
+        <a href="login.html">Sign In/Sign Up</a>
+    </div>
+
+    <div class="drawer-toggle">
+        <span class="drawer-icon" onclick="openNav()">&#9776;</span>
+        <span class="site-name"><a href="index.html">Hotel<span class="color">Bloom</span></a></span>
+    </div>
+
+
+    </div>
+    <style>
+
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex; 
+            flex-direction: column;
+          
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+       
+        h2 {
+            text-align: center;
+            color: #a41616;
+            margin-top: 30px;
+            font-size: 3rem;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    ul.topnav {
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    background-color: #B58048; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 70px; 
+    padding: 0 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+ul.topnav .site-name {
+    margin-right: auto;
+}
+
+ul.topnav .site-name a {
+    color: #F4F3F8;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul.topnav .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+ul.topnav .nav-links li {
+    list-style: none;
+}
+
+ul.topnav .nav-links a {
+    color: #E8D2B9;
+    text-decoration: none;
+    padding: 14px 16px;
+    transition: color 0.3s; 
+}
+
+ul.topnav .nav-links a:hover {
+    color: #F4F3F8; 
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #B58048;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #E8D2B9;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #F4F3F8; 
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.drawer-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    height: 50px;
+    padding-left: 10px;
+    color: #F4F3F8;
+    background-color: #B58048;
+    
+}
+
+.drawer-toggle {
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #B58048; 
+    padding: 10px 20px;
+    color: #F4F3F8;
+    height: 50px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #F4F3F8;
+    cursor: pointer;
+}
+ .site-name a{
+    text-decoration: none;
+    color: #F4F3F8;
+ }
+
+.color {
+    color:#88112d;
+}
+
+#main {
+    min-height: calc(100vh - 120px);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.footer {
+    background-color: #B58048;
+    color: #F4F3F8;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    position: relative;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin: 20px;
+    text-align: left;
+}
+
+.footer-section h3 {
+    color: #3E000E;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #F4F3F8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #E8D2B9;
+}
+
+.footer-section .social-links a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.footer-section .social-links img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+}
+
+.footer-section .social-links img:hover {
+    transform: scale(1.2); 
+}
+
+.footer-bottom {
+    border-top: 1px solid #E8D2B9;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #E8D2B9;
+}
+h1, h2 {
+    margin: 0;
+}
+
+.favorite-hotels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+ .favorite-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+}
+
+        .hotel-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+            width: 100%;
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        
+        .hotel-card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            width: 400px; 
+            transition: transform 0.3s;
+            min-height: 300px; 
+            display: flex;
+            flex-direction: column;
+            margin-left: 37%;
+        }
+
+        .hotel-card:hover {
+            transform: scale(1.05);
+        }
+
+        .hotel-card img {
+            width: 400px;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hotel-info {
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1; 
+        }
+
+        .hotel-info h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hotel-info p {
+            font-size: 1rem;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: #88112d;
+            font-weight: bold;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #777;
+            margin-left: 10px;
+        }
+        .no-favorites {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #999;
+            margin-top: 50px;
+            
+        }
+ 
+        /* Medium devices (Tablets) */
+@media only screen and (max-width: 768px) {
+    .favorite-item {
+        width: 45%; /* Adjust to 45% width on tablets */
+    }
+}
+
+/* Large devices (Desktops) */
+@media only screen and (min-width: 1024px) {
+    .favorite-item {
+        width: 30%;
+    }
+}
+        
+    </style>
+</head>
+<body>
+    <h2>Favorites</h2>
+    <div id="liked-hotels"></div>
+
+    <script>
+               // مسح بيانات localStorage
+            //   localStorage.clear();
+        document.addEventListener("DOMContentLoaded", function () {
+            const likedHotelsContainer = document.getElementById("liked-hotels");
+            const savedHotels = JSON.parse(localStorage.getItem("likedHotels")) || [];
+
+            if (savedHotels.length === 0) {
+                likedHotelsContainer.innerHTML = "<p>No favorites added yet.</p>";
+                return;
+            }
+
+            savedHotels.forEach(hotel => {
+                likedHotelsContainer.innerHTML += hotel.html;
+            });
+        });
+ 
+    </script>
+      <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="bot.html">FAQ</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><span>Phone:</span> <a href="tel:+1234567890">+1 234 567 890</a></li>
+                    <li><span>Email:</span> <a href="mailto:contact@hotelbloom.com">contact@hotelbloom.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><img src="images\facebook_2111393.png" alt="Facebook"></a>
+                    <a href="#"><img src="images\instagram-logo_87390.png" alt="Instagram"></a>
+                    <a href="#"><img src="images\twitter_2111688.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HotelBloom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

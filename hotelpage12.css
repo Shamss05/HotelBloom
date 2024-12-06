@@ -1,0 +1,147 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+    header {
+        background-image: url(images/sasha-kaunas-67-sOi7mVIk-unsplash.jpg);
+        height: 400px;
+        background-size: cover;
+        /* backdrop-filter: blur(5px); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        padding: 40px 20px;  /* Padding around the header */
+        text-align: center;  /* Center-align text */
+        box-shadow: 0 4px 8px rgba(242, 173, 36, 0.718);  /* Subtle shadow for depth */
+        position: relative;  /* For possible positioning adjustments */
+        z-index: 100;  /* Ensure it stays above other content */
+      }
+      
+      header h1 {
+        margin-top: 100px;
+        font-size: 3rem;  /* Large font for the hotel name */
+        color: #1b043be9;
+        font-family: 'Georgia', serif; /* Elegant serif font for the hotel name */
+        letter-spacing: 2px;  /* Space between the letters */
+      }
+      
+      header p {
+        font-size: 1.8rem;  /* Slightly larger font size */
+        font-weight: lighter; /* Lighter font weight for description */
+        letter-spacing: 1px;
+        font-family: 'Georgia', serif;  /* Clean sans-serif font */
+      }
+  
+  /* Gallery Section */
+  .gallery {
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .gallery h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .gallery-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .gallery-container img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-container img:hover {
+    transform: scale(1.05);
+  }
+  
+  .room-selector {
+    background-color: #fff;
+    padding: 60px 0;
+  }
+  
+  .room-selector h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+  
+  .form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .form-group select {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group select:focus {
+    border-color: #333;
+    outline: none;
+  }
+  
+  .btn {
+    grid-column: span 2;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  
+  /* Total Price Display */
+  .total-price {
+    grid-column: span 2;
+    background-color: #eaeaea;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }

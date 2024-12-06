@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e4dedebc;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/Skyline-view-of-Aswan-with-sailboats.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px); /* Blurs the background */
+    z-index: -1; /* Keeps it behind other elements */
+}
+
+.form {
+    left: 33%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    max-height: 90%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #88112d;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #B58048;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: #88112d;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message, .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: #88112d;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline #88112d;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 100px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: #B58048;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: #88112d;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: #B58048;
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+  /* Responsive Adjustments */
+@media (max-width: 768px) {
+  .form {
+      left: 10%;
+      margin-top: 100px;
+      max-width: 90%; /* Adjust the width to fit smaller screens */
+      padding: 15px; /* Reduce padding */
+  }
+
+  .title {
+      font-size: 24px; /* Adjust font size for smaller screens */
+  }
+
+  .input {
+      padding: 8px; /* Reduce input padding */
+  }
+
+  .submit {
+      font-size: 14px; /* Adjust button font size */
+      padding: 8px;
+  }
+
+  .signin {
+      font-size: 12px; /* Reduce text size for links */
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+      margin-top: 50px; /* Further adjust margins for smaller devices */
+      padding: 10px;
+  }
+
+  .title {
+      font-size: 20px; /* Further reduce title size */
+  }
+
+  .input {
+      font-size: 12px; /* Adjust input font size */
+      padding: 6px;
+  }
+
+  .submit {
+      font-size: 12px;
+      padding: 6px;
+  }
+}

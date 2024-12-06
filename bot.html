@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking Chatbot</title>
+  <link rel="stylesheet" href="bot.css">
+
+</head>
+
+<body>
+  <ul class="topnav" id="topNav">
+    <li class="site-name"><a href="index.html">Hotel<span class="color">Bloom</span></a></li>
+    <div class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="favourite.html">Favorite</a></li>
+      <li><a href="bot.html">Help</a></li>
+      <li><a href="login.html">Sign In/Sign Up</a></li>
+    </div>
+  </ul>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="favourite.html">Favorite</a>
+    <a href="bot.html">Help</a>
+    <a href="login.html">Sign In/Sign Up</a>
+  </div>
+
+  <div class="drawer-toggle">
+    <span class="drawer-icon" onclick="openNav()">&#9776;</span>
+    <span class="site-name"><a href="index.html">Hotel<span class="color">Bloom</span></a></span>
+  </div>
+  <div class="container">
+    <div class="chat-container">
+      <div class="messages">
+
+      </div>
+      <div class="options">
+
+        <button onclick="sendMessage('What hotels are available?')">What hotels are available?</button>
+        <button onclick="sendMessage('Are there any current discounts?')">Any current discounts?</button>
+        <button onclick="sendMessage('I want to search for a hotel in Cairo')">How Can I Search for hotel?</button>
+        <button onclick="sendMessage('What types of rooms are available?')">Room types?</button>
+        <button onclick="sendMessage('What is the price for a night?')">Price for a night?</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Help</h3>
+        <ul>
+          <li><a href="bot.html">FAQ</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><span>Phone:</span> <a href="tel:+1234567890">+1 234 567 890</a></li>
+          <li><span>Email:</span> <a href="mailto:contact@hotelbloom.com">contact@hotelbloom.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><img src="images\facebook_2111393.png" alt="Facebook"></a>
+          <a href="#"><img src="images\instagram-logo_87390.png" alt="Instagram"></a>
+          <a href="#"><img src="images\twitter_2111688.png" alt="Twitter"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 HotelBloom. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="bot.js"></script>
+
+
+</body>
+
+</html>
+
+
